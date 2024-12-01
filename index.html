@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>蕾姆の表白♂</title>
+    <style>
+        #image1 {
+            cursor: pointer;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="image1" src="Screenshot_2024_1201_014243.png">
+    <div id="popup">
+        <img src="Screenshot_2024_1201_021919.png" alt="曼巴">
+        <span style="position: absolute; top: 0; right: 0; cursor: pointer; padding: 10px;" onclick="closePopup()">×</span>
+    </div>
+    
+    <audio id="audio1" src="黑猫 - 缺氧 [mqms2].ogg" style="display: none;"></audio>
+    
+    <audio id="audio2" src="拉露恩丷 - 《西游鸡》你干嘛哈哈哎哟～ [mqms].ogg" style="display: none;"></audio>
+
+    <script>
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+            var audio1 = document.getElementById('audio1');
+            audio1.pause();
+            audio1.currentTime = 0;
+            var audio2 = document.getElementById('audio2');
+            audio2.play();
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            var audio2 = document.getElementById('audio2');
+            audio2.pause();
+            audio2.currentTime = 0;
+        }
+
+        document.getElementById('image1').onclick = openPopup;
+    </script>
+</body>
+
+</html>
